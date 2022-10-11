@@ -1,7 +1,11 @@
 const app = require('express')();
+const routes = require('./routes');
+const db = require('mysql');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
+
+routes(app);
 
 app.get('/', (req, res) => {
   res.status(200).send('test request')
